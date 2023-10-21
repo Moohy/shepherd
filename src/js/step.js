@@ -456,7 +456,7 @@ export class Step extends Evented {
    * @private
    */
   _updateStepTargetOnHide() {
-    const target = this.target || document.body;
+    const target = this.target != null ? this.target : document.body;
 
     if (this.options.highlightClass) {
       target.classList.remove(this.options.highlightClass);
